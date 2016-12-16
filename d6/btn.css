@@ -1,0 +1,53 @@
+body {
+  padding: 0;
+  margin: 0;
+  background: #53c2d6; }
+  body .btn-groups {
+    padding: .5em 0; }
+    body .btn-groups .btn {
+      position: relative;
+      display: block;
+      margin: .5em auto;
+      border: 2px solid #fff;
+      color: #fff;
+      font-size: 20px;
+      height: 3em;
+      line-height: 3em;
+      width: 200px;
+      background: rgba(255, 255, 255, 0.2);
+      text-align: center;
+      text-decoration: none;
+      overflow: hidden; }
+      body .btn-groups .btn:after {
+        content: " ";
+        position: absolute;
+        background: none repeat scroll 0 0 #fff;
+        height: 0%;
+        left: 50%;
+        top: 50%;
+        width: 100%;
+        z-index: -1;
+        transition: all .5s ease; }
+      body .btn-groups .btn:hover {
+        color: #000; }
+        body .btn-groups .btn:hover:after {
+          height: 420%; }
+    body .btn-groups .btnA:after {
+      transform: translateX(-50%) translateY(-50%) rotateZ(45deg); }
+    body .btn-groups .btnB:after {
+      transform: translateX(-50%) translateY(-50%) rotateZ(45deg); }
+    body .btn-groups .btnC:after {
+      transform: translateX(-50%) translateY(-50%);
+      opacity: .5; }
+    body .btn-groups .btnC:hover:after {
+      height: 420%;
+      opacity: 1; }
+    body .btn-groups .btnD:after {
+      transform: translateX(-50%) translateY(-50%);
+      border-radius: 50%;
+      width: 0;
+      opacity: .5; }
+    body .btn-groups .btnD:hover:after {
+      height: 420%;
+      width: 150%;
+      opacity: 1; }

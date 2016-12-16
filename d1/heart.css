@@ -1,0 +1,118 @@
+body {
+    width: 100%;
+}
+p,.heart {
+    margin : 0 auto;
+}
+/*初始状态*/
+.heart {
+    margin-top : 10em;
+    width: 3em;
+    height : 3em;
+    font-size : 3em;
+    cursor: pointer;
+    color: #aaa;
+    position: relative;
+}
+.heart:hover{
+    animation: scale-change 2s infinite;
+}
+.heart:before {
+    content :"❤";
+    position: absolute;
+    color : #A12b2b;
+    opacity: 0;
+}
+/*like状态*/
+.like{
+    color : #A12b2b;
+}
+.like:before {
+    animation : fly 2s;
+}
+/*unlike状态*/
+.unlike{
+    color: #aaa;
+}
+.unlike:before ,.unlike:after{
+    content :"❤";
+    position: absolute;
+    color : #aaa;
+    opacity: 0;
+}
+.unlike:before {
+    animation : broken-left 2s;
+    clip: rect(0, 20px, 50px, 0);
+}
+.unlike:after {
+    animation : broken-right 2s;
+    clip: rect(0, 50px, 50px, 25px);
+}
+.reference {
+    width : 100px;
+    height : 100px;
+    background : #aaa;
+    margin : 0 auto;
+}
+.rotate{
+    width : 100px;
+    height : 100px;
+    background : #aaa;
+    margin : 0 auto;
+    /*transform : rotateX(50deg);/*围绕x轴转，平面来看就是沿着中心横轴压缩*/
+    /*transform : rotateY(50deg);/*围绕Y轴转，平面来看就是沿着中心纵轴压缩*/
+    /*transform : rotateZ(50deg);/*围绕Z轴转,想象中心Z轴垂直屏幕存在，围着转就是图片在二维空间旋转，平面来看就是沿着中心点旋转，最重要*/
+    /*transform : rotate3d(1,1,0,45deg);/*x,y,z轴是否旋转，最后一个值为旋转角度*/
+    /*transform : translateX(-50px);/*沿着X轴平行移动*/
+    /*transform : translateY(-50px);/*沿着Y轴平行移动*/
+    /*transform : translateZ(-50px);/*沿着Z轴平行移动,平面看无变化*/
+    /*transform : translate3d(-50px,-50px,-50px);*/
+    /*transform : skewX(50deg);*/
+    /*transform : skewY(50deg);/*沿着Y轴倾斜*/
+    /*transform : skew(-50deg,50deg);*/
+    /*transform: scale(1.5);*/
+    transform: scale(1.5,1);
+}
+@keyframes scale-change {
+    50% {
+        transform: scale(1.1);
+    }
+}
+@keyframes fly {
+    50% {
+        opacity: 1;
+        transform: scale(1.5) rotateZ(-10deg) translateY(-3em);
+    }
+    100% {
+        opacity: 0;
+        transform : scale(1.7) rotateZ(5deg) translateY(-3.5em);
+    }
+}
+@keyframes broken-left {
+    0% {
+        opacity: 1;
+        transform: scale(1.5) translateY(-3em);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.5) rotateZ(-15deg) translateY(-3em);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1.5) rotateZ(-15deg) translateY(-3em);
+    }
+}
+@keyframes broken-right {
+    0% {
+        opacity: 1;
+        transform: scale(1.5) translateY(-3em);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.5) rotateZ(15deg) translateY(-3em);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1.5) rotateZ(15deg) translateY(-3em);
+    }
+}

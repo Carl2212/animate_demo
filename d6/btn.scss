@@ -1,0 +1,68 @@
+$background_color : #53c2d6;
+$white_cr : #fff;
+$font-cr : #000;
+body {
+  padding : 0 ;
+  margin : 0;
+  background : $background_color;
+  .btn-groups{
+    padding : .5em 0;
+    .btn{
+      position: relative;
+      display: block;
+      margin : .5em auto;
+      border : 2px solid $white_cr;
+      color : $white_cr;
+      font-size: 20px;
+      height : 3em;
+      line-height :3em;
+      width: 200px;
+      background : rgba(255,255,255,0.2);
+      text-align: center;
+      text-decoration: none;
+      overflow: hidden;
+      &:after{
+        content : " ";
+        position: absolute;
+        background: none repeat scroll 0 0 $white_cr;
+        height: 0%;
+        left: 50%;
+        top: 50%;
+        width: 100%;
+        z-index:-1;
+        transition: all .5s ease;
+      }
+      &:hover{
+        color : $font-cr;
+        &:after{
+          height : 420%;
+        }
+      }
+    }
+    .btnA:after{
+      transform : translateX(-50%) translateY(-50%) rotateZ(45deg);/*translateX(50%) +translateY(50%) 相当于中心移动到图形中间。此时做变化是中心放射性变化 */
+    }
+    .btnB:after{
+      transform : translateX(-50%) translateY(-50%) rotateZ(45deg);
+    }
+    .btnC:after{
+      transform :translateX(-50%) translateY(-50%);
+      opacity: .5;
+    }
+    .btnC:hover:after{
+      height : 420%;
+      opacity: 1;
+    }
+    .btnD:after{
+      transform :translateX(-50%) translateY(-50%);
+      border-radius: 50%;
+      width: 0;
+      opacity: .5;
+    }
+    .btnD:hover:after{
+      height : 420%;
+      width: 150%;
+      opacity: 1;
+    }
+  }
+}

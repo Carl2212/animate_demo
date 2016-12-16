@@ -1,0 +1,113 @@
+$base_color1 : #87ceeb;
+$base_color2 : #ff6347;
+$base_color3 : #ffd700;
+$base_color4 : #333;
+$base_color5 : #fff;
+
+body {
+  background : $base_color4;
+  .area{
+    width: 500px;
+    height : 500px;
+    margin : 0 auto;
+    position: relative;
+    .circle_1 {
+      width : 200px;
+      height : 100px;
+      border-radius: 100px;
+      background : transparent;
+      border-left : 50px solid $base_color1;
+      border-right : 50px solid $base_color2;
+      margin-top : -50px;
+      margin-left : -100px;
+      z-index : 6;
+    }
+    .circle_2 {
+      width : 170px;
+      height : 80px;
+      border-radius: 100px;
+      background : transparent;
+      border-left : 50px solid $base_color5;
+      border-right : 50px solid $base_color5;
+      margin-top : -40px;
+      margin-left : -85px;
+      z-index : 5;
+    }
+    .circle_3{
+      width : 140px;
+      height : 60px;
+      border-radius: 100px;
+      background : transparent;
+      border-left : 50px solid $base_color1;
+      border-right : 50px solid $base_color2;
+      margin-top : -30px;
+      margin-left : -70px;
+      z-index : 4;
+    }
+    .circle_4{
+      width : 110px;
+      height : 40px;
+      border-radius: 100px;
+      background : transparent;
+      border-left : 50px solid $base_color5;
+      border-right : 50px solid $base_color5;
+      margin-top : -20px;
+      margin-left : -55px;
+      z-index : 3;
+    }
+    .circle_5{
+      width : 80px;
+      height : 20px;
+      border-radius: 100px;
+      background : transparent;
+      border-left : 50px solid $base_color1;
+      border-right : 50px solid $base_color2;
+      margin-top : -10px;
+      margin-left : -40px;
+      z-index : 2;
+    }
+    .circle_center {
+      width: 15px;
+      height : 15px;
+      background : $base_color3;
+      border-radius: 100%;
+      z-index:1;
+      margin-left : 40px;
+      margin-top : -7px;
+      box-shadow: 0px 0px 40px $base_color3;
+    }
+    .circle_1,.circle_2,.circle_3,.circle_4,.circle_5,.circle_center {
+      position: absolute;
+      top : 50%;
+      left : 50%;
+    }
+    .circle_1,.circle_2,.circle_3,.circle_4,.circle_5 {
+      animation: circle 10s infinite , merge 2s alternate infinite;
+    }
+  }
+}
+@keyframes merge {
+  100%{
+    width : 0;
+    margin-left:0;
+  }
+}
+@keyframes circle {
+  0%{
+    transform : rotateZ(0deg);
+  }
+  25%{
+    transform : rotateZ(90deg);
+  }
+  50%{
+    transform : rotateZ(180deg);
+  }
+  75%{
+    transform : rotateZ(270deg);
+  }
+  100%{
+    transform : rotateZ(360deg);
+  }
+}
+
+

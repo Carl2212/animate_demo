@@ -1,0 +1,56 @@
+$base_bk : #3498db;
+$base_fcolor : #fff;
+@mixin clearfx() {
+  &:after{
+    display: block;
+    content : " ";
+    clear : both;
+  }
+}
+body{
+  .buttons-group {
+    width: 12em;
+    margin : 0 auto;
+    @include clearfx();
+    button {
+      border : 1px solid $base_bk;
+      display: block;
+      width: 5em;
+      height : 4em;
+      color : $base_fcolor;
+      background :$base_bk;
+      float:left;
+      margin : 1em;
+      transition: all 1s;/*放在上面与放在hover里面的区别 就是有没有回程效果*/
+    }
+    .highlight:hover {
+      background : transparent;
+      color : $base_bk;
+    }
+    .fade:hover {
+      opacity: 0;
+    }
+    .boom:hover {
+      transform: scale(2);
+      opacity: 0;
+    }
+    .focus:hover {
+      border : 1em solid $base_fcolor;
+    }
+    .rotate:hover {
+      transform: rotateZ(90deg);
+    }
+    .knit:hover {
+      transform: rotateX(90deg);
+    }
+    .shrink:hover {
+      transform: scale(0);
+    }
+    .squeeze:hover {
+      transform: rotateX(90deg) scaleX(2);
+    }
+    .deform:hover {
+      transform: skewX(-90deg);
+    }
+  }
+}

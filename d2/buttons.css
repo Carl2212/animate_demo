@@ -1,0 +1,37 @@
+body .buttons-group {
+  width: 12em;
+  margin: 0 auto; }
+  body .buttons-group:after {
+    display: block;
+    content: " ";
+    clear: both; }
+  body .buttons-group button {
+    border: 1px solid #3498db;
+    display: block;
+    width: 5em;
+    height: 4em;
+    color: #fff;
+    background: #3498db;
+    float: left;
+    margin: 1em;
+    transition: all 1s; }
+  body .buttons-group .highlight:hover {
+    background: transparent;
+    color: #3498db; }
+  body .buttons-group .fade:hover {
+    opacity: 0; }
+  body .buttons-group .boom:hover {
+    transform: scale(2);
+    opacity: 0; }
+  body .buttons-group .focus:hover {
+    border: 1em solid #fff; }
+  body .buttons-group .rotate:hover {
+    transform: rotateZ(90deg); }
+  body .buttons-group .knit:hover {
+    transform: rotateX(90deg); }
+  body .buttons-group .shrink:hover {
+    transform: scale(0); }
+  body .buttons-group .squeeze:hover {
+    transform: rotateX(90deg) scaleX(2); }
+  body .buttons-group .deform:hover {
+    transform: skewX(-90deg); }
