@@ -1,0 +1,43 @@
+$bk_loader : #888;
+.loader{
+  position: relative;
+  span {
+    width: 5px;
+    height : 300px;
+    display: inline-block;
+    position: relative;
+  }
+  span:after{
+    display: block;
+    content: " ";
+    width: 3px;
+    height : 3px;
+    border-radius: 2px;
+    background :$bk_loader;
+    transform: translateX(-50%) translateY(-50%);
+    position: absolute;
+    top : 50%;
+    left : 1px;
+  }
+  @for $i from 0 through 15{
+    span:nth-child(#{$i}) {
+      $second : 0s;
+      @if($i > 7) {
+        $second : (14-$i)*0.3s;
+      }@else{
+        $second : $i*0.3s;
+      }
+      &:after{
+        animation: loading 1.5s ease $second infinite alternate;
+      }
+    }
+  }
+}
+@keyframes loading {
+  0%{
+    height : 3px;
+  }
+  100%{
+    height : 50px;
+  }
+}
